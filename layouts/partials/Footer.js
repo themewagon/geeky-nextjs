@@ -7,12 +7,15 @@ import Logo from "@layouts/components/Logo";
 import { markdownify } from "@lib/utils/textConverter";
 import Link from "next/link";
 
+
+
+
 const Footer = () => {
   const { copyright, footer_content } = config.params;
   return (
     <footer className="section relative mt-12 pt-[70px] pb-[50px]">
       <ImageFallback
-        className="-z-[1] object-cover object-left  md:object-top"
+        className="-z-[1] absolute min-h-full inset-0 block object-cover object-left  md:object-top"
         src="/images/footer-bg-shape.svg"
         alt="footer background"
         fill={true}
