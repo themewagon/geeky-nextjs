@@ -200,6 +200,9 @@ const Sidebar = ({ posts, categories, className }) => {
             By Singing Up, You Agree To
             <Link
               href={newsletter.privacy_policy_page}
+              onClick={(e) => {
+                e.preventDefault();
+              }}
               className="ml-1 text-primary"
             >
               Privacy Policy

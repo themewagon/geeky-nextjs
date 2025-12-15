@@ -1,7 +1,7 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
-import InnerPagination from "@layouts/components/InnerPagination";
 import ImageFallback from "@layouts/components/ImageFallback";
+import InnerPagination from "@layouts/components/InnerPagination";
 import dateFormat from "@lib/utils/dateFormat";
 import { markdownify } from "@lib/utils/textConverter";
 import { DiscussionEmbed } from "disqus-react";
