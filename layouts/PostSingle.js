@@ -1,12 +1,12 @@
 import config from "@config/config.json";
 import Base from "@layouts/Baseof";
 import InnerPagination from "@layouts/components/InnerPagination";
+import ImageFallback from "@layouts/components/ImageFallback";
 import dateFormat from "@lib/utils/dateFormat";
 import { markdownify } from "@lib/utils/textConverter";
 import { DiscussionEmbed } from "disqus-react";
 import { MDXRemote } from "next-mdx-remote";
 import { useTheme } from "next-themes";
-import Image from "next/image";
 import Link from "next/link";
 import { FaRegCalendar, FaUserAlt } from "react-icons/fa";
 import Post from "./partials/Post";
@@ -44,7 +44,7 @@ const PostSingle = ({
               <article>
                 <div className="relative">
                   {image && (
-                    <Image
+                    <ImageFallback
                       src={image}
                       height="500"
                       width="1000"

@@ -1,7 +1,7 @@
 import { markdownify } from "@lib/utils/textConverter";
 import shortcodes from "@shortcodes/all";
 import { MDXRemote } from "next-mdx-remote";
-import Image from "next/image";
+import ImageFallback from "./components/ImageFallback";
 
 const About = ({ data }) => {
   const { frontmatter, mdxContent } = data;
@@ -12,13 +12,12 @@ const About = ({ data }) => {
       <div className="container text-center">
         {image && (
           <div className="mb-8">
-            <Image
+            <ImageFallback
               src={image}
               width={1298}
               height={616}
               alt={title}
               className="rounded-lg"
-              priority={true}
             />
           </div>
         )}
