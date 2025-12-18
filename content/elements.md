@@ -53,7 +53,7 @@ Did you come here for something in particular or just general Riker-bashing? And
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](/404)
+[I'm a relative reference to a repository file](/geeky-nextjs/404)
 
 [You can use numbers for reference-style link definitions][1]
 
