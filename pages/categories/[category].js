@@ -8,9 +8,9 @@ import Post from "@partials/Post";
 const { blog_folder } = config.settings;
 
 // category page
-const Category = ({ postsByCategories, category, posts, categories }) => {
+const Category = ({ postsByCategories, category, posts, categories, currentPath }) => {
   return (
-    <Base title={category}>
+    <Base title={category} currentPath={currentPath}>
       <div className="section mt-16">
         <div className="container">
           <h1 className="h2 mb-12">
@@ -78,6 +78,7 @@ export const getStaticProps = ({ params }) => {
       postsByCategories: filterPosts,
       category: params.category,
       categories: categoriesWithPostsCount,
+      currentPath: `/categories/${params.category}`,
     },
   };
 };

@@ -13,7 +13,7 @@ const Contact = ({ data }) => {
       <div className="container">
         <div className="row relative pb-16">
           <ImageFallback
-            className="-z-[1] object-cover object-top"
+            className="-z-[1] object-cover object-top absolute top-0 left-0 w-full h-full"
             src={"/images/map.svg"}
             fill="true"
             alt="map bg"

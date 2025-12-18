@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 
-const Header = () => {
+const Header = ({ currentPath = "/" }) => {
   // distructuring the main menu from menu object
   const { main } = menu;
 
@@ -17,8 +17,8 @@ const Header = () => {
   const [searchModal, setSearchModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  // Router
-  const router = useRouter();
+  // Use currentPath for active state determination
+  const activePath = currentPath;
 
   //stop scrolling when nav is open
   useEffect(() => {
@@ -65,7 +65,7 @@ const Header = () => {
                         className={`nav-link ${
                           menu.children
                             .map((c) => c.url)
-                            .includes(router.asPath) && "active"
+                            .includes(activePath) && "active"
                         } inline-flex items-center`}
                       >
                         {menu.name}
@@ -85,7 +85,7 @@ const Header = () => {
                             <Link
                               href={child.url}
                               className={`nav-dropdown-link block ${
-                                router.asPath === child.url && "active"
+                                activePath === child.url && "active"
                               }`}
                             >
                               {child.name}
@@ -99,7 +99,7 @@ const Header = () => {
                       <Link
                         href={menu.url}
                         className={`nav-link block ${
-                          router.asPath === menu.url && "active"
+                          activePath === menu.url && "active"
                         }`}
                       >
                         {menu.name}

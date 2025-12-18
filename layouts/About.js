@@ -24,7 +24,13 @@ const About = ({ data }) => {
         {markdownify(title, "h1", "h1 text-left lg:text-[55px] mt-12")}
 
         <div className="content text-left">
-          <MDXRemote {...mdxContent} components={shortcodes} />
+          <MDXRemote
+            {...mdxContent}
+            components={{
+              ...shortcodes,
+              img: ImageFallback,
+            }}
+          />
         </div>
 
         <div className="row mt-24 text-left lg:flex-nowrap">

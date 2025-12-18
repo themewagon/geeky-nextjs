@@ -6,7 +6,7 @@ import Default from "@layouts/Default";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
 
 // for all regular pages
-const RegularPages = ({ data }) => {
+const RegularPages = ({ data, currentPath }) => {
   const { title, meta_title, description, image, noindex, canonical, layout } =
     data.frontmatter;
   const { content } = data;
@@ -19,6 +19,7 @@ const RegularPages = ({ data }) => {
       image={image}
       noindex={noindex}
       canonical={canonical}
+      currentPath={currentPath}
     >
       {layout === "404" ? (
         <NotFound data={data} />
@@ -57,6 +58,7 @@ export const getStaticProps = async ({ params }) => {
     props: {
       slug: regular,
       data: allPages,
+      currentPath: `/${regular}`,
     },
   };
 };

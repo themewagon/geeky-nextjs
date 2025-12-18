@@ -20,6 +20,7 @@ const Home = ({
   recent_posts,
   categories,
   promotion,
+  currentPath = "/",
 }) => {
   // define state
   const sortPostByDate = sortByDate(posts);
@@ -29,7 +30,7 @@ const Home = ({
   const showPosts = pagination;
 
   return (
-    <Base>
+    <Base currentPath={currentPath}>
       {/* Banner */}
       <section className="section banner relative pb-0">
         <ImageFallback
@@ -133,7 +134,9 @@ const Home = ({
 
               {/* Promotion */}
               {promotion.enable && (
-                <Link href={promotion.link} className="section block pt-0">
+                <Link onClick={(e) => {
+                  e.preventDefault();
+                }} href={promotion.link} className="section block pt-0">
                   <ImageFallback
                     className="h-full w-full"
                     height="115"
@@ -206,6 +209,7 @@ export const getStaticProps = async () => {
       recent_posts,
       promotion,
       categories: categoriesWithPostsCount,
+      currentPath: "/",
     },
   };
 };

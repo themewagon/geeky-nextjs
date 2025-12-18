@@ -23,6 +23,7 @@ const PostSingle = ({
   posts,
   allCategories,
   relatedPosts,
+  currentPath,
 }) => {
   let { description, title, date, image, categories } = frontmatter;
   description = description ? description : content.slice(0, 120);
@@ -36,7 +37,7 @@ const PostSingle = ({
     : config.settings.blog_folder + "/" + slug;
 
   return (
-    <Base title={title} description={description}>
+    <Base title={title} description={description} currentPath={currentPath}>
       <section className="section single-blog mt-6">
         <div className="container">
           <div className="row">
@@ -90,7 +91,13 @@ const PostSingle = ({
                   </li>
                 </ul>
                 <div className="content mb-16">
-                  <MDXRemote {...mdxContent} components={shortcodes} />
+                  <MDXRemote
+                    {...mdxContent}
+                    components={{
+                      ...shortcodes,
+                      img: ImageFallback,
+                    }}
+                  />
                 </div>
                 {config.settings.InnerPaginationOptions.enableBottom && (
                   <InnerPagination posts={posts} date={date} />

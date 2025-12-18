@@ -12,6 +12,7 @@ const Base = ({
   image,
   noindex,
   canonical,
+  currentPath,
   children,
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
@@ -89,7 +90,7 @@ const Base = ({
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header />
+      <Header currentPath={currentPath || router.asPath} />
       {/* main site */}
       <main>{children}</main>
       <Footer />

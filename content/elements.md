@@ -39,21 +39,21 @@ Did you come here for something in particular or just general Riker-bashing? And
 
 6. Did you come here for something in particular
 
-7. URLs and URLs in angle brackets will automatically get turned into links. [http://www.example.com](http://www.example.com) or
+7. URLs and URLs in angle brackets will automatically get turned into links. [http://www.example.com](#) or
 
-8. [http://www.example.com](http://www.example.com) and sometimes example.com (but not on Github, for example).
+8. [http://www.example.com](#) and sometimes example.com (but not on Github, for example).
 
 ---
 
 ### Link
 
-[I'm an inline-style link](https://www.google.com)
+[I'm an inline-style link](#)
 
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
+[I'm an inline-style link with title](# "Google's Homepage")
 
 [I'm a reference-style link][arbitrary case-insensitive reference text]
 
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
+[I'm a relative reference to a repository file](/404)
 
 [You can use numbers for reference-style link definitions][1]
 
@@ -63,9 +63,9 @@ example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
 
-[arbitrary case-insensitive reference text]: https://www.themefisher.com
-[1]: https://gethugothemes.com
-[link text itself]: https://www.getjekyllthemes.com
+[arbitrary case-insensitive reference text]: #
+[1]: #
+[link text itself]: #
 
 ---
 
@@ -239,7 +239,6 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 ### Image
 
 ![image](/images/post/post-1.png)
-
 ---
 
 ### Youtube video

@@ -13,6 +13,7 @@ const Article = ({
   allCategories,
   relatedPosts,
   posts,
+  currentPath,
 }) => {
   const { frontmatter, content } = post;
 
@@ -25,6 +26,7 @@ const Article = ({
       allCategories={allCategories}
       relatedPosts={relatedPosts}
       posts={posts}
+      currentPath={currentPath}
     />
   );
 };
@@ -76,6 +78,7 @@ export const getStaticProps = async ({ params }) => {
       allCategories: categoriesWithPostsCount,
       relatedPosts: relatedPosts,
       posts: posts,
+      currentPath: `/posts/${single}`,
     },
   };
 };
